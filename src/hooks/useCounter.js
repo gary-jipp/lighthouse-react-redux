@@ -1,5 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
 import {useDispatch, useSelector} from "react-redux";
+import counterSlice from "@/store/counterSlice";
 
 export default function useCounter() {
   const dispatch = useDispatch();
@@ -19,22 +19,3 @@ export default function useCounter() {
 
   return {count, increment, decrement, clear};
 };
-
-// counterSlice is read first by main.jsx so we can do this
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: {value: 0},
-  reducers: {
-    increment: (state) => {
-      state.value++;
-    },
-    decrement: (state) => {
-      state.value--;
-    },
-    reset: (state) => {
-      state.value = 0;
-    },
-  },
-});
-
-export const counterReducer = counterSlice.reducer;

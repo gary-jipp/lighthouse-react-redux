@@ -1,4 +1,4 @@
-import '@/App.css';
+import './App.css';
 import useCounter from './hooks/useCounter';
 
 export default function() {
